@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Yoj Cuison | Curriculum Vitae</title>
+  <meta name="description" content="Curriculum vitae of Yoj Cuison: BSIT student, AUF point guard, and licensed real estate salesperson in Clark, Pampanga.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+/* ==========================================================
+   Yoj Cuison — CV website
+   Palette: night slate, court white, hardwood gold, ink
+   Type:    Barlow Condensed (display) + IBM Plex Sans (body)
+   ========================================================== */
+
+:root {
+  --night: #1b2233;
+  --night-soft: #262f47;
+  --court: #f5f6f8;
+  --paper: #ffffff;
+  --ink: #161b26;
+  --muted: #566078;
+  --gold: #d4a83a;
+  --gold-deep: #8b6914;
+  --rule: #d9dde6;
+
+  --display: "Barlow Condensed", "Arial Narrow", "Roboto Condensed", sans-serif;
+  --body: "IBM Plex Sans", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  --measure: 68ch;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4.5rem;
+}
+
+body {
+  margin: 0;
+  background: var(--court);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  background: var(--gold);
+  color: var(--night);
+  padding: 0.6rem 1rem;
+  font-weight: 600;
+  z-index: 100;
+}
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* ---------- Top bar ---------- */
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--night);
+  color: var(--court);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.topbar-inner {
+  max-width: 76rem;
+  margin: 0 auto;
+  padding: 0.7rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.monogram {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  color: var(--gold);
+}
+
+.topbar nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1.4rem;
+  flex-wrap: wrap;
+}
+
+.topbar nav a {
+  font-size: 0.95rem;
+  text-decoration: none;
+  color: rgba(245, 246, 248, 0.82);
+  padding: 0.25rem 0;
+  border-bottom: 2px solid transparent;
+}
+.topbar nav a:hover {
+  color: var(--paper);
+  border-bottom-color: var(--gold);
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--night);
+  color: var(--court);
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 76rem;
+  margin: 0 auto;
+  padding: clamp(4rem, 10vw, 8rem) 1.5rem clamp(4rem, 9vw, 7rem);
+}
+
+.hero-role {
+  margin: 0 0 1rem;
+  font-size: 1.05rem;
+  color: var(--gold);
+  font-weight: 500;
+}
+
+.hero h1 {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(4rem, 15vw, 11.5rem);
+  line-height: 0.86;
+  letter-spacing: -0.005em;
+  text-transform: uppercase;
+}
+
+.hero-lede {
+  max-width: 34rem;
+  margin: 2rem 0 0;
+  font-size: 1.2rem;
+  color: rgba(245, 246, 248, 0.88);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 2.2rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  border: 2px solid var(--gold);
+  border-radius: 2px;
+}
+.btn-solid {
+  background: var(--gold);
+  color: var(--night);
+}
+.btn-solid:hover {
+  background: #e2b94d;
+  border-color: #e2b94d;
+}
+.btn-line {
+  color: var(--court);
+}
+.btn-line:hover {
+  background: rgba(212, 168, 58, 0.14);
+}
+
+/* Half-court drawing */
+
+.court {
+  position: absolute;
+  right: -4%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: min(62vw, 46rem);
+  height: auto;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.court .line {
+  fill: none;
+  stroke: rgba(245, 246, 248, 0.26);
+  stroke-width: 2;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: draw 1.8s ease-out forwards;
+}
+.court .arc {
+  stroke: rgba(212, 168, 58, 0.62);
+  stroke-width: 2.5;
+}
+.court .drive {
+  stroke: var(--gold);
+  stroke-width: 3;
+  stroke-linecap: round;
+  animation-delay: 1.5s;
+  animation-duration: 1.1s;
+}
+.court .guard {
+  fill: var(--gold);
+  opacity: 0;
+  animation: appear 0.4s ease-out 1.2s forwards;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes appear {
+  to {
+    opacity: 1;
+  }
+}
+
+/* ---------- Content sections ---------- */
+
+main section {
+  border-bottom: 1px solid var(--rule);
+}
+
+.section-inner {
+  max-width: 76rem;
+  margin: 0 auto;
+  padding: clamp(3rem, 6vw, 5rem) 1.5rem;
+  display: grid;
+  grid-template-columns: 13rem minmax(0, 1fr);
+  gap: 2rem 3rem;
+}
+
+.section-inner > h2 {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 2.1rem;
+  line-height: 1;
+  color: var(--ink);
+  position: relative;
+  padding-top: 0.9rem;
+  align-self: start;
+}
+.section-inner > h2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2.5rem;
+  height: 4px;
+  background: var(--gold);
+}
+
+.prose {
+  max-width: var(--measure);
+}
+.prose p {
+  margin: 0 0 1.1rem;
+}
+.prose p:last-child {
+  margin-bottom: 0;
+}
+
+/* Entries: education, experience, leadership */
+
+.entry {
+  padding: 0 0 1.8rem;
+  margin: 0 0 1.8rem;
+  border-bottom: 1px solid var(--rule);
+  max-width: var(--measure);
+}
+.entry:last-child {
+  border-bottom: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.entry h3 {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 1.15;
+}
+
+.entry .where {
+  margin: 0.15rem 0 0.7rem;
+  color: var(--gold-deep);
+  font-weight: 500;
+}
+
+.entry p {
+  margin: 0 0 0.7rem;
+}
+.entry ul {
+  margin: 0.4rem 0 0;
+  padding-left: 1.2rem;
+}
+.entry li {
+  margin-bottom: 0.35rem;
+}
+
+/* Projects: ruled rows instead of cards */
+
+.project-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 52rem;
+}
+
+.project {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 15rem);
+  gap: 0.4rem 2rem;
+  padding: 1.35rem 0;
+  border-top: 1px solid var(--rule);
+}
+.project:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.project h3 {
+  margin: 0 0 0.25rem;
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 1.15;
+}
+.project p {
+  margin: 0;
+  color: var(--muted);
+}
+.project .stack {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--ink);
+  align-self: start;
+  padding-top: 0.25rem;
+}
+.project .stack span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* Skills */
+
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 1.8rem 2rem;
+  max-width: 52rem;
+}
+.skills h3 {
+  margin: 0 0 0.5rem;
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.35rem;
+}
+.skills ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.skills li {
+  padding: 0.28rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+/* Contact */
+
+.contact-list {
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: 0.6rem 2rem;
+  max-width: var(--measure);
+}
+.contact-list .label {
+  color: var(--muted);
+}
+.contact-list a {
+  color: var(--ink);
+  text-decoration-color: var(--gold);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+.contact-list a:hover {
+  color: var(--gold-deep);
+}
+.contact-row {
+  display: contents;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  background: var(--night);
+  color: rgba(245, 246, 248, 0.8);
+  font-size: 0.95rem;
+}
+.footer-inner {
+  max-width: 76rem;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.6rem 2rem;
+}
+.footer-inner p {
+  margin: 0;
+}
+.footer-inner strong {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+/* ---------- Small screens ---------- */
+
+@media (max-width: 52rem) {
+  .section-inner {
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+  }
+  .project {
+    grid-template-columns: 1fr;
+  }
+  .court {
+    width: 120vw;
+    right: -30%;
+    opacity: 0.6;
+  }
+}
+
+@media (max-width: 40rem) {
+  .topbar nav ul {
+    gap: 0.9rem;
+  }
+  .topbar nav a {
+    font-size: 0.88rem;
+  }
+  .contact-list {
+    grid-template-columns: 1fr;
+    gap: 0.1rem;
+  }
+  .contact-list .value {
+    margin-bottom: 0.7rem;
+  }
+}
+
+/* ---------- Motion & print ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .court .line {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+  .court .guard {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+@media print {
+  .topbar,
+  .court,
+  .hero-actions,
+  .skip-link {
+    display: none;
+  }
+  .hero,
+  .site-footer {
+    background: none;
+    color: var(--ink);
+  }
+  .hero-role,
+  .footer-inner strong {
+    color: var(--gold-deep);
+  }
+  .hero-inner {
+    padding: 1rem 0;
+  }
+  .hero h1 {
+    font-size: 4rem;
+  }
+  .hero-lede {
+    color: var(--ink);
+  }
+  .section-inner {
+    padding: 1.2rem 0;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#about">Skip to content</a>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="monogram" href="#top" aria-label="Yoj Cuison, back to top">YC</a>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="hero" id="top">
+    <!-- Half-court line drawing: the page-load moment. Point guard brings it up and drives to the rim. -->
+    <svg class="court" viewBox="0 0 500 470" aria-hidden="true" focusable="false">
+      <rect class="line" pathLength="1" x="1" y="1" width="498" height="468"/>
+      <rect class="line" pathLength="1" x="170" y="1" width="160" height="189"/>
+      <circle class="line" pathLength="1" cx="250" cy="190" r="60"/>
+      <path class="line" pathLength="1" d="M210 40 H290"/>
+      <circle class="line" pathLength="1" cx="250" cy="52.5" r="7.5"/>
+      <path class="line" pathLength="1" d="M210 52.5 A40 40 0 0 0 290 52.5"/>
+      <path class="line arc" pathLength="1" d="M30 1 V142 A237.5 237.5 0 0 0 470 142 V1"/>
+      <path class="line drive" pathLength="1" d="M250 318 C 190 270, 300 200, 250 66"/>
+      <circle class="guard" cx="250" cy="318" r="9"/>
+    </svg>
+
+    <div class="hero-inner">
+      <p class="hero-role">Student athlete, real estate salesperson, developer</p>
+      <h1>Yoj<br>Cuison</h1>
+      <p class="hero-lede">
+        Fourth-year BSIT student and varsity point guard at Angeles University Foundation.
+        I sell property across the Clark corridor and build the software systems I wish existed.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-solid" href="#projects">See my projects</a>
+        <a class="btn btn-line" href="#contact">Get in touch</a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <section id="about">
+      <div class="section-inner">
+        <h2>About</h2>
+        <div class="prose">
+          <p>
+            I'm a licensed real estate salesperson under A. Paruli Realty and the face behind
+            YC Estate, a personal brand built around one idea: a student athlete who
+            takes your property search as seriously as a game.
+          </p>
+          <p>
+            In school I study Information Technology, and I build production-style systems
+            for real offices and real problems, from a registrar's document tracking system to
+            a rental management platform. I also sell HR software to large BPOs in the Clark
+            Freeport Zone, so I understand both the code and the customer.
+          </p>
+          <p>
+            I want to build PropTech: technology that helps agents in the Philippines
+            work faster and serve clients better.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="section-inner">
+        <h2>Education</h2>
+        <div>
+          <article class="entry">
+            <h3>Bachelor of Science in Information Technology</h3>
+            <p class="where">Angeles University Foundation, Angeles City, Pampanga</p>
+            <p>Fourth year, Section 4A. Expected graduation 2027.</p>
+            <ul>
+              <li>Coursework includes Software Quality Assurance, Systems Integration and Architecture, Systems Administration and Maintenance, and AWS Academy Cloud Foundations.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="section-inner">
+        <h2>Experience</h2>
+        <div>
+          <article class="entry">
+            <h3>Licensed Real Estate Salesperson</h3>
+            <p class="where">A. Paruli Realty (Broker: Allan Paruli) and YC Estate</p>
+            <ul>
+              <li>Sell and market residential property in Angeles, Mabalacat, Porac, Bacolor, and Clark.</li>
+              <li>Run Meta Ads campaigns and sales materials for developer listings such as Mawing 4 Residences.</li>
+              <li>Produce Taglish content for Facebook, TikTok, and Instagram Reels under the "student athlete realtor" brand.</li>
+              <li>Designed the YC Estate logo system, post templates, and a black-and-gold brand website.</li>
+            </ul>
+          </article>
+
+          <article class="entry">
+            <h3>B2B Software Sales</h3>
+            <p class="where">Hurey, a Philippine-built HRIS platform</p>
+            <ul>
+              <li>Target large foreign-owned companies, especially BPOs in the Clark Freeport Zone with 300 or more employees.</li>
+              <li>Built the sales system: a discovery call script, five-touch outreach sequences, and a post-demo follow-up email set.</li>
+            </ul>
+          </article>
+
+          <article class="entry">
+            <h3>Former Vice President, CCS College Student Council</h3>
+            <p class="where">Angeles University Foundation</p>
+            <p>Represent students of the College of Computer Studies and help lead council programs and activities.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="section-inner">
+        <h2>Projects</h2>
+        <ul class="project-list">
+          <li class="project">
+            <div>
+              <h3>FAST TRACK</h3>
+              <p>Document request and tracking system for the AUF Registrar. My BSIT capstone, evaluated with TAM and ISO surveys.</p>
+            </div>
+            <p class="stack"><span>Built with</span>Laravel, PHP</p>
+          </li>
+          <li class="project">
+            <div>
+              <h3>KMSAR</h3>
+              <p>Knowledge Management System for Academic Research, built for AUF offices.</p>
+            </div>
+            <p class="stack"><span>Built with</span>Laravel, PHP</p>
+          </li>
+          <li class="project">
+            <div>
+              <h3>RentTrack</h3>
+              <p>Multi-owner rental management system for tracking properties, tenants, and payments.</p>
+            </div>
+            <p class="stack"><span>Built with</span>Laravel, PHP</p>
+          </li>
+          <li class="project">
+            <div>
+              <h3>GANAP PH</h3>
+              <p>Barangay event management system created for a Systems Integration and Architecture course.</p>
+            </div>
+            <p class="stack"><span>Built with</span>Laravel, Vue</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="section-inner">
+        <h2>Skills</h2>
+        <div class="skills">
+          <div>
+            <h3>Development</h3>
+            <ul>
+              <li>Laravel and PHP</li>
+              <li>Vue and React</li>
+              <li>NestJS</li>
+              <li>C#</li>
+              <li>HTML and CSS</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Platforms and tools</h3>
+            <ul>
+              <li>Git and GitHub</li>
+              <li>Supabase, Redis, Algolia, Clerk</li>
+              <li>AWS EC2 and Apache HTTP Server</li>
+              <li>Cursor</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Quality assurance</h3>
+            <ul>
+              <li>Software testing life cycle</li>
+              <li>PHPUnit and Playwright</li>
+              <li>ISTQB principles</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Sales and marketing</h3>
+            <ul>
+              <li>Real estate sales</li>
+              <li>B2B sales and outreach</li>
+              <li>Meta Ads</li>
+              <li>Short-form video content</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+ 
+
+    <section id="contact">
+      <div class="section-inner">
+        <h2>Contact</h2>
+        <div>
+          <div class="prose">
+            <p>
+              Looking for property in Clark, Angeles, Mabalacat, Porac, or Bacolor?
+              Or need a developer for an internship or junior role? Send me a message.
+            </p>
+          </div>
+          <!-- TODO: replace every placeholder below with your real details -->
+          <ul class="contact-list">
+            <li class="contact-row">
+              <span class="label">Email</span>
+              <span class="value"><a href="mailto:yoj@example.com">cuisonyoj@gmail.com</a></span>
+            </li>
+            <li class="contact-row">
+              <span class="label">Phone</span>
+              <span class="value"><a href="tel:+639000000000">+63 947 033 0275</a></span>
+            </li>
+            <li class="contact-row">
+              <span class="label">Facebook</span>
+              <span class="value"><a href="https://facebook.com/">Yoj Cuison | Real Estate</a></span>
+            </li>
+            <li class="contact-row">
+              <span class="label">Instagram</span>
+              <span class="value"><a href="https://instagram.com/">Yoj Cuison | Real Estate</a></span>
+            </li>
+            <li class="contact-row">
+              <span class="label">GitHub</span>
+              <span class="value"><a href="https://github.com/">github.com/YjoNosiuc</a></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p><strong>Yoj Cuison</strong> &nbsp;|&nbsp; Student ID: 17-0413-982</p>
+      <p>Served by Apache HTTP Server on Amazon EC2</p>
+    </div>
+  </footer>
+</body>
+</html>
